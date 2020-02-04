@@ -14,7 +14,18 @@ export class ListaJugadorComponent implements OnInit {
   constructor(public jugadorService: JugadorService) { }
 
   ngOnInit() {
-    this.listaJugadores = this.jugadorService.getAllJugadores();
+    // this.listaJugadores = this.jugadorService.getAllJugadores();
+    this.jugadorService.getAllJugadores().subscribe(
+      result => {
+        this.listaJugadores = result['datos'];
+      },
+      error => {
+        alert('Error al listar las puntuaciones.');
+      },
+      () => {
+
+      }
+    );
   }
 
 }

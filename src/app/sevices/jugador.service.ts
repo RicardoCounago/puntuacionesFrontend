@@ -11,17 +11,31 @@ export class JugadorService {
   url: string;
 
   constructor(private httpClient: HttpClient) {
-    this.url = 'http://localhost:5200/';
+    this.url = 'http://localhost:5200/puntuacion';
    }
 
   getAllJugadores(): Observable<any> {
-    return this.httpClient.get('http://localhost:5200/puntuaciones');
+    return this.httpClient.get(this.url);
+  }
+
+  getJugador(id: string) {
+    return this.httpClient.get(this.url + '/' + id);
   }
 
   addJugador(jugador: Jugador): Observable<any> {
     const body = JSON.stringify(jugador);
-    const headers = new HttpHeaders({'Contetnt-Type': 'application/json'});
-    return this.httpClient.post(this.url + 'puntuacion', body, {headers});
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
+    return this.httpClient.post(this.url, body, {headers});
+  }
+
+  removeJugador(id: string) {
+    return this.httpClient.delete(this.url + '/' + id);
+  }
+
+  updateJugador(id: string, jugador: Jugador){
+    const body = JSON.stringify(jugador);
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
+    return this.httpClient.put(this.url + '/' + id, body, {headers});
   }
 
   // TODO insert, update, delete

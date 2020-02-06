@@ -8,13 +8,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddJugadorComponent } from './add-jugador/add-jugador.component';
 import { FormsModule } from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
+import { EditJugadorComponent } from './edit-jugador/edit-jugador.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaJugadorComponent,
     AddJugadorComponent,
-    MenuComponent
+    MenuComponent,
+    EditJugadorComponent
   ],
   imports: [
     BrowserModule,

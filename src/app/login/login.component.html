@@ -1,0 +1,14 @@
+<form [formGroup]="form" (submit)="onSubmit(form.value)">
+  <label for="email">Email:</label>
+  <input type="email" name="email" formControlName="email">
+
+  <br/>
+
+  <label for="password">Contraseña:</label>
+  <input type="password" name="password" formControlName="password">
+
+  <br/>
+
+  <input type="submit" value="enviar" [disabled]="form.invalid">
+
+</form>

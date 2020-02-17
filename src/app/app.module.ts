@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { ListaJugadorComponent } from './lista-jugador/lista-jugador.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddJugadorComponent } from './add-jugador/add-jugador.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
 import { EditJugadorComponent } from './edit-jugador/edit-jugador.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +17,15 @@ import { EditJugadorComponent } from './edit-jugador/edit-jugador.component';
     ListaJugadorComponent,
     AddJugadorComponent,
     MenuComponent,
-    EditJugadorComponent
+    EditJugadorComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

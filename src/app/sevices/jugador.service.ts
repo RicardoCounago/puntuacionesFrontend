@@ -11,7 +11,7 @@ export class JugadorService {
   url: string;
 
   constructor(private httpClient: HttpClient) {
-    this.url = 'http://localhost:5200/puntuacion';
+    this.url = 'http://localhost:5200/usuario';
    }
 
   getAllJugadores(): Observable<any> {
